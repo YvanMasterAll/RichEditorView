@@ -76,7 +76,7 @@ public enum RichEditorDefaultOption: RichEditorOption {
     case link
     
     public static let all: [RichEditorDefaultOption] = [
-        .clear,
+        //.clear,
         .undo, .redo, .bold, .italic,
         .subscript, .superscript, .strike, .underline,
         .textColor, .textBackgroundColor,

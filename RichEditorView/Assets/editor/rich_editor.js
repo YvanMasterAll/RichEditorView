@@ -78,6 +78,7 @@ RE.runCallbackQueue = function() {
 
     setTimeout(function() {
         window.location.href = "re-callback://";
+        //window.webkit.messageHandlers.iOS_Native_FlushMessageQueue.postMessage("re-callback://")
     }, 0);
 };
 
@@ -131,6 +132,7 @@ RE.updatePlaceholder = function() {
 
 RE.removeFormat = function() {
     document.execCommand('removeFormat', false, null);
+    return "test message";
 };
 
 RE.setFontSize = function(size) {

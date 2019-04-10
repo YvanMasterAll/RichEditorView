@@ -135,7 +135,7 @@ import UIKit
         toolbar.items = buttons
 
         let defaultIconWidth: CGFloat = 28
-        let barButtonItemMargin: CGFloat = 11
+        let barButtonItemMargin: CGFloat = 12
         let width: CGFloat = buttons.reduce(0) {sofar, new in
             if let view = new.value(forKey: "view") as? UIView {
                 return sofar + view.frame.size.width + barButtonItemMargin
@@ -145,9 +145,9 @@ import UIKit
         }
         
         if width < frame.size.width {
-            toolbar.frame.size.width = frame.size.width
+            toolbar.frame.size.width = frame.size.width + barButtonItemMargin
         } else {
-            toolbar.frame.size.width = width
+            toolbar.frame.size.width = width + barButtonItemMargin
         }
         toolbar.frame.size.height = 44
         toolbarScroll.contentSize.width = width
