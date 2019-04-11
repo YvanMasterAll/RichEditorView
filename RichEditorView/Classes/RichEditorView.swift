@@ -91,10 +91,10 @@ fileprivate var t2 = Date().timeIntervalSince1970
     }
     
     /// The value we hold in order to be able to set the line height before the JS completely loads.
-    private var innerLineHeight: Int = 17
+    private var innerLineHeight: Int = 18
     
     /// The line height of the editor. Defaults to 28.
-    open private(set) var lineHeight: Int = 28 {
+    open private(set) var lineHeight: Int = 18 {
         didSet {
             runJS("RE.setLineHeight('\(innerLineHeight)px');")
         }
@@ -450,7 +450,7 @@ fileprivate var t2 = Date().timeIntervalSince1970
     //yTest
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         t2 = Date().timeIntervalSince1970
-        print(t2 - t1)
+        //print(t2 - t1)
     }
     
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
