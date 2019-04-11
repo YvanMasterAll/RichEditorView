@@ -254,20 +254,25 @@ RE.insertHTML = function(html) {
 
 RE.insertLink = function(url, title) {
     RE.restorerange();
-    var sel = document.getSelection();
-    if (sel.toString().length !== 0) {
-        if (sel.rangeCount) {
-
-            var el = document.createElement("a");
-            el.setAttribute("href", url);
-            el.setAttribute("title", title);
-
-            var range = sel.getRangeAt(0).cloneRange();
-            range.surroundContents(el);
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
-    }
+//    var sel = document.getSelection();
+//    if (sel.toString().length !== 0) {
+//        if (sel.rangeCount) {
+//
+//            var el = document.createElement("a");
+//            el.setAttribute("href", url);
+//            el.setAttribute("title", title);
+//
+//            var range = sel.getRangeAt(0).cloneRange();
+//            range.surroundContents(el);
+//            sel.removeAllRanges();
+//            sel.addRange(range);
+//        }
+//    }
+    var el = document.createElement("a");
+    el.setAttribute("href", url);
+    el.setAttribute("title", title);
+    el.innerHTML = title
+    RE.insertHTML(el.outerHTML)
     RE.callback("input");
 };
 
